@@ -11,6 +11,10 @@
   <property name="encontrou_oasis" default="false" />
   <property name="tem_luz" default="true" />
   <property name="porta_trancada" default="true" />
+  <property name="codigo_correto" default="false" />
+  <property name="biometria_ok" default="false" />
+  <property name="nivel_acesso" default="1" />
+  <property name="emergencia" default="false" />
 
   <tutorial-intro />
   <tutorial-comparacao />
