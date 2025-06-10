@@ -151,7 +151,7 @@
   </fab-if>
 
   <!-- Bloqueado quando porta está trancada -->
-  <fab-if when="$porta_trancada = 'true'">
+  <fab-if when="$porta_trancada">
     <agent
       id="bloqueado"
       x="500"
