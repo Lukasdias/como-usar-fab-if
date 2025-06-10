@@ -9,6 +9,8 @@
   <property name="tem_lenha" default="false" />
   <property name="tem_agua" default="false" />
   <property name="encontrou_oasis" default="false" />
+  <property name="tem_luz" default="true" />
+  <property name="porta_trancada" default="true" />
 
   <tutorial-intro />
   <tutorial-comparacao />
