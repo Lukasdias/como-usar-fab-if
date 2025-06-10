@@ -76,7 +76,7 @@
     text="💡 Ligar/Desligar Luz"
     color="#ffffff"
     font-size="14"
-    on_click="set(tem_luz, $tem_luz = 'true' ? 'false' : 'true')"
+    on_click="set(tem_luz, !$tem_luz)"
   />
 
   <agent
