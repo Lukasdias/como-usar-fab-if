@@ -27,7 +27,7 @@
   <!-- Balão de fala do professor -->
   <agent
     id="fala-professor"
-    x="250"
+    x="center"
     y="150"
     text="Olá, jovem programador! Vou te ensinar fab-if!"
     color="#ffffff"
