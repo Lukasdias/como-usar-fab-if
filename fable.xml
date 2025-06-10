@@ -5,6 +5,8 @@
   <property name="pontuacao_total" default="0" />
   <property name="licoes_completas" default="[]" />
   <property name="vida_heroi" default="100" />
+  <property name="temperatura" default="10" />
+  <property name="tem_lenha" default="false" />
 
   <tutorial-intro />
   <tutorial-comparacao />
