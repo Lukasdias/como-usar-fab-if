@@ -1,3 +1,239 @@
-<page id="tutorial-logica-not" bg_color="black">
-  <agent id="titulo" x="center" y="center" text="Página tutorial-logica-not" color="white" font-size="24" />
+<page id="tutorial-logica-not" bg_color="#2c1810" bg_music="osts-fear.mp3">
+  <!-- Título -->
+  <agent
+    id="titulo-not"
+    x="280"
+    y="20"
+    text="🚫 Lição 5: Operador NOT (não)"
+    color="#ff6666"
+    font-size="20"
+    animation="typewriter"
+  />
+
+  <!-- Narrativa introdutória -->
+  <agent
+    id="narrativa-not-1"
+    x="50"
+    y="80"
+    text="Em um cemitério assombrado, nosso herói enfrenta criaturas sombrias..."
+    color="#cccccc"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-not-2"
+    x="50"
+    y="110"
+    text="NOT inverte o resultado: TRUE vira FALSE, FALSE vira TRUE!"
+    color="#cccccc"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-not-3"
+    x="50"
+    y="140"
+    text="Fantasmas aparecem quando NÃO há luz!"
+    color="#cccccc"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <!-- Cenário: Cemitério assombrado -->
+  <agent
+    id="esqueleto"
+    x="30"
+    y="300"
+    image="cemetery-skeleton.png"
+    width="120"
+    animation="wiggle"
+  />
+
+  <agent
+    id="tumulo"
+    x="600"
+    y="320"
+    image="cemetery-tombstone-1.png"
+    width="100"
+  />
+
+  <!-- Variáveis do cenário -->
+
+  <!-- Controles -->
+  <agent
+    id="status-luz"
+    x="200"
+    y="200"
+    text="💡 Luz acesa: $tem_luz"
+    color="#ffff99"
+    font-size="16"
+  />
+
+  <agent
+    id="botao-luz"
+    x="200"
+    y="230"
+    text="💡 Ligar/Desligar Luz"
+    color="#ffffff"
+    font-size="14"
+    on_click="set(tem_luz, $tem_luz = 'true' ? 'false' : 'true')"
+  />
+
+  <agent
+    id="status-porta"
+    x="200"
+    y="280"
+    text="🚪 Porta trancada: $porta_trancada"
+    color="#8b4513"
+    font-size="16"
+  />
+
+  <agent
+    id="botao-porta"
+    x="200"
+    y="310"
+    text="🗝️ Trancar/Destrancar"
+    color="#ffffff"
+    font-size="14"
+    on_click="set(porta_trancada, $porta_trancada = 'true' ? 'false' : 'true')"
+  />
+
+  <!-- Fantasmas aparecem quando NÃO tem luz -->
+  <fab-if when="not $tem_luz = 'true'">
+    <agent
+      id="fantasma1"
+      x="350"
+      y="250"
+      text="👻"
+      font-size="30"
+      animation="float"
+    />
+    <agent
+      id="fantasma2"
+      x="450"
+      y="270"
+      text="👻"
+      font-size="25"
+      animation="float"
+    />
+    <agent
+      id="msg-fantasmas"
+      x="350"
+      y="200"
+      text="Fantasmas aparecem no escuro!"
+      color="#ffffff"
+      font-size="14"
+      animation="typewriter"
+    />
+  </fab-if>
+
+  <!-- Passagem livre quando porta NÃO está trancada -->
+  <fab-if when="not $porta_trancada = 'true'">
+    <agent
+      id="passagem"
+      x="500"
+      y="350"
+      text="🚪 PASSAGEM LIVRE!"
+      color="#00ff00"
+      font-size="16"
+      animation="bounce-in"
+    />
+
+    <agent
+      id="narrativa-livre"
+      x="200"
+      y="380"
+      text="A porta foi destrancada! Caminho aberto!"
+      color="#ffffff"
+      font-size="14"
+      animation="typewriter"
+    />
+  </fab-if>
+
+  <!-- Bloqueado quando porta está trancada -->
+  <fab-if when="$porta_trancada = 'true'">
+    <agent
+      id="bloqueado"
+      x="500"
+      y="350"
+      text="🔒 BLOQUEADO"
+      color="#ff0000"
+      font-size="14"
+    />
+  </fab-if>
+
+  <!-- Explicação visual -->
+  <agent
+    id="explicacao-not-1"
+    x="450"
+    y="200"
+    text="📋 not $tem_luz = 'true'"
+    color="#cccccc"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="explicacao-not-2"
+    x="450"
+    y="230"
+    text="📋 Significa: se luz NÃO está acesa"
+    color="#cccccc"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="tabela-verdade"
+    x="450"
+    y="260"
+    text="📋 TRUE vira FALSE | FALSE vira TRUE"
+    color="#ff6666"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <!-- Dica narrativa -->
+  <agent
+    id="dica-not"
+    x="200"
+    y="450"
+    text="💡 NOT é útil para condições inversas - quando algo NÃO acontece!"
+    color="#ffffff"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <!-- Navegação -->
+  <agent
+    id="voltar-or"
+    x="50"
+    y="530"
+    text="⬅️ Voltar"
+    color="#cccccc"
+    font-size="14"
+    on_click="goToPage('tutorial-logica-or')"
+  />
+
+  <agent
+    id="proximo-complex"
+    x="300"
+    y="530"
+    text="➡️ Próximo: Condições Complexas"
+    color="#ff6666"
+    font-size="14"
+    on_click="goToPage('tutorial-complexo')"
+  />
+
+  <!-- Progresso -->
+  <agent
+    id="progresso-not"
+    x="20"
+    y="20"
+    text="Progresso: 5/7"
+    color="#cccccc"
+    font-size="12"
+  />
 </page>
