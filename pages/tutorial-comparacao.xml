@@ -18,9 +18,9 @@
   <agent
     id="heroi-floresta"
     x="30"
-    y="350"
+    y="390"
     image="forest-hero-idle.png"
-    width="120"
+    width="100"
     animation="fade-in"
   />
 
