@@ -73,7 +73,7 @@
     text="🔢 Inserir Código"
     color="#ffffff"
     font-size="12"
-    on_click="set(codigo_correto, 'true')"
+    on_click="set(codigo_correto, true)"
   />
 
   <agent
@@ -92,7 +92,7 @@
     text="👆 Scan Biométrico"
     color="#ffffff"
     font-size="12"
-    on_click="set(biometria_ok, 'true')"
+    on_click="set(biometria_ok, true)"
   />
 
   <agent
