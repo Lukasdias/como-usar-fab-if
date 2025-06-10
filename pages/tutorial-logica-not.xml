@@ -167,7 +167,7 @@
     id="explicacao-not-1"
     x="450"
     y="200"
-    text="📋 not $tem_luz = 'true'"
+    text="📋 not tem_luz = $tem_luz"
     color="#cccccc"
     font-size="14"
     animation="typewriter"
