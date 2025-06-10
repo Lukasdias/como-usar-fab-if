@@ -1,10 +1,4 @@
-<page
-  id="tutorial-intro"
-  bg_color="#1a1a2e"
-  bg_image="tech-bg-lab.png"
-  bg_music="osts-stage.mp3"
->
-  <!-- Título Principal -->
+<page id="tutorial-intro" bg_image="tech-bg-lab.png" bg_music="osts-stage.mp3">
   <agent
     id="titulo-principal"
     x="200"
