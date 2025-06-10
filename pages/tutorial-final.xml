@@ -1,4 +1,4 @@
-<page id="tutorial-final" bg_color="#4b0082" bg_image="forest-bg.png" bg_music="osts-retro-forest.mp3">
+<page id="tutorial-final" bg_image="forest-bg.png" bg_music="osts-retro-forest.mp3">
   
   <!-- Título do desafio -->
   <agent id="titulo-final" x="220" y="20" 
