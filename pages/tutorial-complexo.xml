@@ -1,3 +1,272 @@
-<page id="tutorial-complexo" bg_color="black">
-  <agent id="titulo" x="center" y="center" text="Página tutorial-complexo" color="white" font-size="24" />
+<page
+  id="tutorial-complexo"
+  bg_color="#0a0a0a"
+  bg_image="tech-bg-lab.png"
+  bg_music="osts-stage.mp3"
+>
+  <!-- Título -->
+  <agent
+    id="titulo-complexo"
+    x="230"
+    y="20"
+    text="🧠 Lição 6: Condições Complexas"
+    color="#00ffff"
+    font-size="20"
+    animation="typewriter"
+  />
+
+  <!-- Narrativa introdutória -->
+  <agent
+    id="narrativa-complex-1"
+    x="30"
+    y="70"
+    text="Em um laboratório de alta segurança, nosso cientista precisa acessar dados ultra-secretos..."
+    color="#ffff99"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-complex-2"
+    x="30"
+    y="100"
+    text="O sistema exige múltiplas condições combinadas com AND, OR e NOT!"
+    color="#ffff99"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <!-- Cenário: Laboratório de alta segurança -->
+  <agent
+    id="cientista"
+    x="30"
+    y="300"
+    image="tech-acid-1.png"
+    width="120"
+    animation="glow"
+  />
+
+  <!-- Variáveis do sistema de segurança -->
+  <property name="codigo_correto" default="false" />
+  <property name="biometria_ok" default="false" />
+  <property name="nivel_acesso" default="1" />
+  <property name="emergencia" default="false" />
+
+  <!-- Painel de controle -->
+  <agent
+    id="painel-titulo"
+    x="200"
+    y="140"
+    text="🔐 Sistema de Segurança"
+    color="#00ffff"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <!-- Controles -->
+  <agent
+    id="status-codigo"
+    x="200"
+    y="170"
+    text="🔢 Código: $codigo_correto"
+    color="#ffffff"
+    font-size="14"
+  />
+
+  <agent
+    id="botao-codigo"
+    x="200"
+    y="195"
+    text="🔢 Inserir Código"
+    color="#ffffff"
+    font-size="12"
+    on_click="set(codigo_correto, 'true')"
+  />
+
+  <agent
+    id="status-bio"
+    x="200"
+    y="225"
+    text="👆 Biometria: $biometria_ok"
+    color="#ffffff"
+    font-size="14"
+  />
+
+  <agent
+    id="botao-bio"
+    x="200"
+    y="250"
+    text="👆 Scan Biométrico"
+    color="#ffffff"
+    font-size="12"
+    on_click="set(biometria_ok, 'true')"
+  />
+
+  <agent
+    id="status-nivel"
+    x="200"
+    y="280"
+    text="⬆️ Nível de Acesso: $nivel_acesso"
+    color="#ffffff"
+    font-size="14"
+  />
+
+  <agent
+    id="botao-nivel"
+    x="200"
+    y="305"
+    text="⬆️ Subir Nível"
+    color="#ffffff"
+    font-size="12"
+    on_click="set(nivel_acesso, $nivel_acesso + 1)"
+  />
+
+  <agent
+    id="status-emergencia"
+    x="200"
+    y="335"
+    text="🚨 Emergência: $emergencia"
+    color="#ffffff"
+    font-size="14"
+  />
+
+  <agent
+    id="botao-emergencia"
+    x="200"
+    y="360"
+    text="🚨 Ativar Emergência"
+    color="#ffffff"
+    font-size="12"
+    on_click="set(emergencia, 'true')"
+  />
+
+  <!-- CONDIÇÃO COMPLEXA 1: Acesso normal -->
+  <fab-if when="($codigo_correto = 'true' and $biometria_ok = 'true') and $nivel_acesso >= 3">
+    <agent
+      id="acesso-normal"
+      x="450"
+      y="200"
+      text="✅ ACESSO LIBERADO!"
+      color="#00ff00"
+      font-size="16"
+      animation="bounce-in"
+    />
+
+    <agent
+      id="porta-aberta"
+      x="550"
+      y="300"
+      image="tech-saw.png"
+      width="80"
+      animation="spin"
+    />
+  </fab-if>
+
+  <!-- CONDIÇÃO COMPLEXA 2: Acesso de emergência -->
+  <fab-if when="$emergencia = 'true' or ($nivel_acesso >= 5 and not $biometria_ok = 'false')">
+    <agent
+      id="acesso-emergencia"
+      x="450"
+      y="250"
+      text="🚨 ACESSO DE EMERGÊNCIA!"
+      color="#ff6600"
+      font-size="14"
+      animation="glow"
+    />
+  </fab-if>
+
+  <!-- CONDIÇÃO COMPLEXA 3: Acesso negado -->
+  <fab-if
+    when="not (($codigo_correto = 'true' and $biometria_ok = 'true') or $emergencia = 'true')"
+  >
+    <agent
+      id="acesso-negado"
+      x="450"
+      y="300"
+      text="❌ ACESSO NEGADO"
+      color="#ff0000"
+      font-size="14"
+    />
+  </fab-if>
+
+  <!-- Explicação das condições -->
+  <agent
+    id="condicao-1-titulo"
+    x="200"
+    y="400"
+    text="💡 Condição 1:"
+    color="#00ffff"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="condicao-1-texto"
+    x="200"
+    y="420"
+    text="(código AND biometria) AND nível ≥ 3"
+    color="#cccccc"
+    font-size="12"
+  />
+
+  <agent
+    id="condicao-2-titulo"
+    x="200"
+    y="450"
+    text="🚨 Condição 2:"
+    color="#ff6600"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="condicao-2-texto"
+    x="200"
+    y="470"
+    text="emergência OR (nível ≥ 5 AND NOT bio=false)"
+    color="#cccccc"
+    font-size="12"
+  />
+
+  <!-- Reset -->
+  <agent
+    id="reset-lab"
+    x="500"
+    y="400"
+    text="🔄 Reset Sistema"
+    color="#ffffff"
+    font-size="12"
+    on_click="set(codigo_correto, 'false'); set(biometria_ok, 'false'); set(nivel_acesso, 1); set(emergencia, 'false')"
+  />
+
+  <!-- Navegação -->
+  <agent
+    id="voltar-not"
+    x="50"
+    y="530"
+    text="⬅️ Voltar"
+    color="#cccccc"
+    font-size="14"
+    on_click="goToPage('tutorial-logica-not')"
+  />
+
+  <agent
+    id="proximo-final"
+    x="300"
+    y="530"
+    text="➡️ Desafio Final!"
+    color="#00ffff"
+    font-size="14"
+    on_click="goToPage('tutorial-final')"
+  />
+
+  <!-- Progresso -->
+  <agent
+    id="progresso-complex"
+    x="20"
+    y="20"
+    text="Progresso: 6/7"
+    color="#00ffff"
+    font-size="12"
+  />
 </page>
