@@ -1,3 +1,247 @@
-<page id="tutorial-logica-and" bg_color="black">
-  <agent id="titulo" x="center" y="center" text="Página tutorial-logica-and" color="white" font-size="24" />
+<page
+  id="tutorial-logica-and"
+  bg_color="#87CEEB"
+  bg_image="snow-bg-neve.png"
+  bg_music="osts-fear.mp3"
+>
+  <!-- Título -->
+  <agent
+    id="titulo-and"
+    x="280"
+    y="20"
+    text="🤝 Lição 3: Operador AND (e)"
+    color="#003366"
+    font-size="20"
+    animation="typewriter"
+  />
+
+  <!-- Narrativa introdutória -->
+  <agent
+    id="narrativa-and-1"
+    x="50"
+    y="80"
+    text="No gélido inverno, nosso aventureiro enfrenta o frio..."
+    color="#000080"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-and-2"
+    x="50"
+    y="110"
+    text="Para acender uma fogueira, ele precisa de DUAS coisas:"
+    color="#000080"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-and-3"
+    x="50"
+    y="140"
+    text="Frio suficiente E lenha disponível!"
+    color="#000080"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <!-- Cenário: Boneco de neve e iglu -->
+  <agent
+    id="boneco-neve"
+    x="30"
+    y="300"
+    image="snow-snowman.png"
+    width="120"
+    animation="fade-in"
+  />
+
+  <agent
+    id="iglu"
+    x="600"
+    y="300"
+    image="snow-igloo.png"
+    width="120"
+    animation="fade-in"
+  />
+
+  <!-- Variáveis do cenário -->
+  <property name="temperatura" default="10" />
+  <property name="tem_lenha" default="false" />
+
+  <!-- Controles -->
+  <agent
+    id="display-temp"
+    x="200"
+    y="200"
+    text="🌡️ Temperatura: $temperatura°C"
+    color="#004080"
+    font-size="16"
+  />
+
+  <agent
+    id="botao-esfriar"
+    x="200"
+    y="230"
+    text="❄️ Esfriar (-5°C)"
+    color="#ffffff"
+    font-size="14"
+    on_click="set(temperatura, $temperatura - 5)"
+  />
+
+  <agent
+    id="botao-esquentar"
+    x="350"
+    y="230"
+    text="🔥 Esquentar (+5°C)"
+    color="#ffffff"
+    font-size="14"
+    on_click="set(temperatura, $temperatura + 5)"
+  />
+
+  <agent
+    id="status-lenha"
+    x="200"
+    y="280"
+    text="🪵 Lenha disponível: $tem_lenha"
+    color="#654321"
+    font-size="16"
+  />
+
+  <agent
+    id="botao-lenha"
+    x="200"
+    y="310"
+    text="🪵 Coletar Lenha"
+    color="#ffffff"
+    font-size="14"
+    on_click="set(tem_lenha, 'true')"
+  />
+
+  <!-- Fogueira aparece APENAS se temperatura <= 0 AND tem_lenha = true -->
+  <fab-if when="$temperatura <= 0 and $tem_lenha = 'true'">
+    <agent
+      id="fogueira"
+      x="400"
+      y="350"
+      text="🔥 FOGUEIRA ACESA!"
+      color="#ff4500"
+      font-size="18"
+      animation="glow"
+    />
+
+    <agent
+      id="narrativa-sucesso"
+      x="200"
+      y="380"
+      text="Perfeito! Ambas condições foram atendidas!"
+      color="#ffffff"
+      font-size="14"
+      animation="typewriter"
+    />
+  </fab-if>
+
+  <!-- Explicação visual -->
+  <agent
+    id="condicao-1"
+    x="450"
+    y="200"
+    text="📋 Condição 1: temperatura ≤ 0"
+    color="#000080"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="condicao-2"
+    x="450"
+    y="230"
+    text="📋 Condição 2: tem_lenha = true"
+    color="#000080"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="resultado"
+    x="450"
+    y="260"
+    text="✅ Ambas devem ser TRUE!"
+    color="#800000"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <!-- Status das condições -->
+  <fab-if when="$temperatura <= 0">
+    <agent
+      id="check1"
+      x="650"
+      y="200"
+      text="✅"
+      color="#00ff00"
+      font-size="16"
+    />
+  </fab-if>
+
+  <fab-if when="not $temperatura <= 0">
+    <agent id="x1" x="650" y="200" text="❌" color="#ff0000" font-size="16" />
+  </fab-if>
+
+  <fab-if when="$tem_lenha = 'true'">
+    <agent
+      id="check2"
+      x="650"
+      y="230"
+      text="✅"
+      color="#00ff00"
+      font-size="16"
+    />
+  </fab-if>
+
+  <fab-if when="not $tem_lenha = 'true'">
+    <agent id="x2" x="650" y="230" text="❌" color="#ff0000" font-size="16" />
+  </fab-if>
+
+  <!-- Dica narrativa -->
+  <agent
+    id="dica-and"
+    x="200"
+    y="450"
+    text="💡 AND exige que TODAS as condições sejam verdadeiras!"
+    color="#ffffff"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <!-- Navegação -->
+  <agent
+    id="voltar-comp"
+    x="50"
+    y="530"
+    text="⬅️ Voltar"
+    color="#666666"
+    font-size="14"
+    on_click="goToPage('tutorial-comparacao')"
+  />
+
+  <agent
+    id="proximo-or"
+    x="300"
+    y="530"
+    text="➡️ Próximo: Lógica OR"
+    color="#003366"
+    font-size="14"
+    on_click="goToPage('tutorial-logica-or')"
+  />
+
+  <!-- Progresso -->
+  <agent
+    id="progresso-and"
+    x="20"
+    y="20"
+    text="Progresso: 3/7"
+    color="#004080"
+    font-size="12"
+  />
 </page>
