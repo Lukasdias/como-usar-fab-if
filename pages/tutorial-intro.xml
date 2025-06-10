@@ -7,69 +7,95 @@
   <!-- Título Principal -->
   <agent
     id="titulo-principal"
-    x="center"
-    y="50"
+    x="200"
+    y="20"
     text="🎓 Academia do fab-if: Lógica Condicional"
     color="#00ff88"
-    font-size="28"
-    animation="fade-in"
+    font-size="22"
+    animation="typewriter"
   />
 
   <!-- Professor Robô -->
   <agent
     id="professor"
-    x="100"
-    y="200"
+    x="50"
+    y="150"
     image="tech-acid-1.png"
+    width="120"
     animation="glow"
   />
 
-  <!-- Balão de fala do professor -->
+  <!-- Narrativa do professor -->
   <agent
-    id="fala-professor"
-    x="center"
-    y="150"
-    text="Olá, jovem programador! Vou te ensinar fab-if!"
+    id="fala-professor-1"
+    x="200"
+    y="120"
+    text="Olá, jovem programador! Sou o Professor Bot."
     color="#ffffff"
     font-size="16"
+    animation="typewriter"
   />
 
-  <!-- Explicação básica -->
   <agent
-    id="explicacao-1"
-    x="center"
-    y="280"
-    text="O fab-if é como uma porta mágica que só se abre quando a condição é verdadeira!"
+    id="fala-professor-2"
+    x="200"
+    y="150"
+    text="Hoje vou te ensinar o poder do fab-if!"
+    color="#ffffff"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <!-- Explicação narrativa -->
+  <agent
+    id="narrativa-1"
+    x="50"
+    y="300"
+    text="O fab-if é como uma porta mágica..."
     color="#ffff99"
     font-size="18"
+    animation="typewriter"
   />
 
   <agent
-    id="explicacao-2"
-    x="center"
-    y="320"
-    text="Se a condição for falsa, os elementos dentro do fab-if ficam invisíveis."
+    id="narrativa-2"
+    x="50"
+    y="330"
+    text="Ela só se abre quando a condição é verdadeira!"
+    color="#ffff99"
+    font-size="18"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-3"
+    x="50"
+    y="360"
+    text="Se a condição for falsa, os elementos ficam invisíveis."
     color="#cccccc"
-    font-size="16"
+    font-size="14"
+    animation="typewriter"
   />
 
   <!-- Exemplo visual simples -->
   <agent
     id="exemplo-titulo"
-    x="center"
-    y="380"
+    x="400"
+    y="300"
     text="👀 Exemplo Simples:"
     color="#ff6b6b"
-    font-size="18"
+    font-size="16"
+    animation="typewriter"
   />
 
   <!-- Botão para demonstração -->
   <agent
     id="botao-demo"
-    x="200"
-    y="430"
+    x="400"
+    y="350"
     text="Clique aqui!"
     color="#ffffff"
+    font-size="14"
     animation="hover-bounce"
     on_click="set(progresso, 1)"
   />
@@ -78,21 +104,34 @@
   <fab-if when="$progresso = 1">
     <agent
       id="texto-aparece"
-      x="400"
-      y="430"
-      text="🎉 Eu apareci porque progresso = 1!"
+      x="500"
+      y="350"
+      text="🎉 Eu apareci!"
       color="#00ff00"
+      font-size="14"
       animation="bounce-in"
     />
   </fab-if>
 
+  <!-- Explicação técnica -->
+  <agent
+    id="explicacao-tecnica"
+    x="400"
+    y="400"
+    text="Isso aconteceu porque progresso = 1"
+    color="#87CEEB"
+    font-size="12"
+    animation="typewriter"
+  />
+
   <!-- Navegação -->
   <agent
     id="proximo"
-    x="center"
-    y="550"
+    x="300"
+    y="500"
     text="➡️ Próxima Lição: Comparações"
     color="#87CEEB"
+    font-size="16"
     animation="hover-glow"
     on_click="goToPage('tutorial-comparacao')"
   />
@@ -100,10 +139,10 @@
   <!-- Progresso -->
   <agent
     id="progresso-intro"
-    x="50"
-    y="50"
+    x="20"
+    y="20"
     text="Progresso: 1/7"
     color="#888888"
-    font-size="14"
+    font-size="12"
   />
 </page>
