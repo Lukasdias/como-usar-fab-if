@@ -135,7 +135,7 @@
   />
 
   <!-- CONDIÇÃO COMPLEXA 1: Acesso normal -->
-  <fab-if when="($codigo_correto = 'true' and $biometria_ok = 'true') and $nivel_acesso >= 3">
+  <fab-if when="($codigo_correto and $biometria_ok) and $nivel_acesso >= 3">
     <agent
       id="acesso-normal"
       x="450"
