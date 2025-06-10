@@ -60,7 +60,8 @@
   <agent
     id="narrativa-2"
     x="50"
-    y="330"
+    y="345"
+    width="200"
     text="Ela só se abre quando a condição é verdadeira!"
     color="#ffff99"
     font-size="18"
@@ -70,7 +71,8 @@
   <agent
     id="narrativa-3"
     x="50"
-    y="360"
+    y="390"
+    width="200"
     text="Se a condição for falsa, os elementos ficam invisíveis."
     color="#cccccc"
     font-size="14"
