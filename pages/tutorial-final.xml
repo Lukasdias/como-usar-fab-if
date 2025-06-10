@@ -21,12 +21,6 @@
   <agent id="boss-final" x="600" y="300" 
          image="cemetery-skeleton.png" width="120" animation="wiggle" />
   
-  <!-- Variáveis do desafio -->
-  <property name="experiencia" default="0" />
-  <property name="tem_espada" default="false" />
-  <property name="tem_escudo" default="false" />
-  <property name="chefe_derrotado" default="false" />
-  <property name="missao_completa" default="false" />
   
   <!-- Interface de status -->
   <agent id="exp-display" x="30" y="150" 
