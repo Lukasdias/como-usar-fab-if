@@ -157,7 +157,7 @@
   </fab-if>
 
   <!-- CONDIÇÃO COMPLEXA 2: Acesso de emergência -->
-  <fab-if when="$emergencia or ($nivel_acesso >= 5 and not $biometria_ok = 'false')">
+  <fab-if when="$emergencia or ($nivel_acesso >= 5 and not !$biometria_ok)">
     <agent
       id="acesso-emergencia"
       x="450"
