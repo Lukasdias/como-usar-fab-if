@@ -1,6 +1,5 @@
 <page
   id="tutorial-comparacao"
-  bg_color="#2a5d31"
   bg_image="tech-bg-lab.png"
   bg_music="osts-retro-forest.mp3"
 >
@@ -47,7 +46,6 @@
   />
 
   <!-- Contador de vida do herói -->
-  <property name="vida_heroi" default="100" />
 
   <agent
     id="display-vida"
