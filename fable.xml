@@ -1,10 +1,12 @@
 <fable>
   <config font-family="Fredericka the Great" />
 
+  <!-- Variáveis globais do tutorial -->
   <property name="progresso" default="0" />
   <property name="pontuacao_total" default="0" />
   <property name="licoes_completas" default="[]" />
 
+  <!-- Páginas do tutorial -->
   <tutorial-intro />
   <tutorial-comparacao />
   <tutorial-logica-and />
