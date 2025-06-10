@@ -99,7 +99,7 @@
   />
 
   <!-- Fantasmas aparecem quando NÃO tem luz -->
-  <fab-if when="not $tem_luz = 'true'">
+  <fab-if when="not $tem_luz">
     <agent
       id="fantasma1"
       x="350"
