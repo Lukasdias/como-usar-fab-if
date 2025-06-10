@@ -7,21 +7,43 @@
   <!-- Título da Lição -->
   <agent
     id="titulo-comparacao"
-    x="center"
-    y="40"
+    x="250"
+    y="20"
     text="🔢 Lição 2: Operadores de Comparação"
     color="#ffffff"
-    font-size="24"
-    animation="slide-down"
+    font-size="20"
+    animation="typewriter"
   />
 
   <!-- Herói da floresta -->
   <agent
     id="heroi-floresta"
-    x="50"
-    y="400"
+    x="30"
+    y="350"
     image="forest-hero-idle.png"
+    width="120"
     animation="fade-in"
+  />
+
+  <!-- Narrativa -->
+  <agent
+    id="narrativa-comparacao"
+    x="30"
+    y="120"
+    text="Nosso herói precisa monitorar sua vida..."
+    color="#ffffff"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-2"
+    x="30"
+    y="150"
+    text="Vamos aprender como comparar números!"
+    color="#ffffff"
+    font-size="16"
+    animation="typewriter"
   />
 
   <!-- Contador de vida do herói -->
@@ -29,9 +51,9 @@
 
   <agent
     id="display-vida"
-    x="50"
-    y="350"
-    text="Vida do Herói: $vida_heroi"
+    x="30"
+    y="300"
+    text="❤️ Vida do Herói: $vida_heroi"
     color="#ff6b6b"
     font-size="16"
   />
@@ -39,19 +61,21 @@
   <!-- Seção: Igualdade (=) -->
   <agent
     id="secao-igual"
-    x="200"
-    y="100"
+    x="250"
+    y="120"
     text="⚖️ Operador = (igual)"
     color="#ffff99"
-    font-size="18"
+    font-size="16"
+    animation="typewriter"
   />
 
   <agent
     id="botao-vida-50"
-    x="200"
-    y="140"
+    x="250"
+    y="150"
     text="Vida = 50"
     color="#ffffff"
+    font-size="14"
     on_click="set(vida_heroi, 50)"
   />
 
@@ -59,9 +83,10 @@
     <agent
       id="msg-vida-50"
       x="400"
-      y="140"
+      y="150"
       text="⚡ Vida está exatamente em 50!"
       color="#ffaa00"
+      font-size="14"
       animation="pulse"
     />
   </fab-if>
@@ -69,55 +94,61 @@
   <!-- Seção: Maior que (>) -->
   <agent
     id="secao-maior"
-    x="200"
+    x="250"
     y="200"
     text="📈 Operador > (maior que)"
     color="#ffff99"
-    font-size="18"
+    font-size="16"
+    animation="typewriter"
   />
 
   <agent
     id="botao-vida-mais"
-    x="200"
-    y="240"
+    x="250"
+    y="230"
     text="+20 Vida"
     color="#ffffff"
+    font-size="14"
     on_click="set(vida_heroi, $vida_heroi + 20)"
   />
 
   <fab-if when="$vida_heroi > 80">
     <agent
       id="escudo-protecao"
-      x="150"
-      y="450"
+      x="170"
+      y="400"
       image="tech-saw.png"
+      width="80"
       animation="spin"
     />
     <agent
       id="msg-protegido"
       x="400"
-      y="240"
+      y="230"
       text="🛡️ Herói protegido! (vida > 80)"
       color="#00ff00"
+      font-size="14"
     />
   </fab-if>
 
   <!-- Seção: Menor que (<) -->
   <agent
     id="secao-menor"
-    x="200"
-    y="300"
+    x="250"
+    y="280"
     text="📉 Operador < (menor que)"
     color="#ffff99"
-    font-size="18"
+    font-size="16"
+    animation="typewriter"
   />
 
   <agent
     id="botao-vida-menos"
-    x="200"
-    y="340"
+    x="250"
+    y="310"
     text="-30 Vida"
     color="#ffffff"
+    font-size="14"
     on_click="set(vida_heroi, $vida_heroi - 30)"
   />
 
@@ -125,9 +156,10 @@
     <agent
       id="aviso-perigo"
       x="400"
-      y="340"
+      y="310"
       text="⚠️ PERIGO! Vida baixa! (< 30)"
       color="#ff0000"
+      font-size="14"
       animation="glow"
     />
   </fab-if>
@@ -137,46 +169,61 @@
     <agent
       id="pocao-cura"
       x="300"
-      y="450"
+      y="400"
       image="forest-mushroom.png"
+      width="80"
       animation="bounce-in"
       on_click="set(vida_heroi, 100)"
     />
     <agent
       id="texto-pocao"
-      x="350"
-      y="450"
+      x="390"
+      y="420"
       text="Clique na poção!"
       color="#00ff88"
+      font-size="12"
     />
   </fab-if>
+
+  <!-- Narrativa de progresso -->
+  <agent
+    id="narrativa-progresso"
+    x="30"
+    y="480"
+    text="Agora você entende como comparar valores!"
+    color="#87CEEB"
+    font-size="14"
+    animation="typewriter"
+  />
 
   <!-- Navegação -->
   <agent
     id="voltar-intro"
-    x="100"
-    y="550"
+    x="50"
+    y="530"
     text="⬅️ Voltar"
     color="#cccccc"
+    font-size="14"
     on_click="goToPage('tutorial-intro')"
   />
 
   <agent
     id="proximo-and"
-    x="center"
-    y="550"
+    x="300"
+    y="530"
     text="➡️ Próximo: Lógica AND"
     color="#87CEEB"
+    font-size="14"
     on_click="goToPage('tutorial-logica-and')"
   />
 
   <!-- Progresso -->
   <agent
     id="progresso-comp"
-    x="50"
-    y="50"
+    x="20"
+    y="20"
     text="Progresso: 2/7"
     color="#888888"
-    font-size="14"
+    font-size="12"
   />
 </page>
