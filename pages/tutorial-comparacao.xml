@@ -1,3 +1,182 @@
-<page id="tutorial-comparacao" bg_color="black">
-  <agent id="titulo" x="center" y="center" text="Página tutorial-comparacao" color="white" font-size="24" />
+<page
+  id="tutorial-comparacao"
+  bg_color="#2a5d31"
+  bg_image="forest-bg.png"
+  bg_music="osts-retro-forest.mp3"
+>
+  <!-- Título da Lição -->
+  <agent
+    id="titulo-comparacao"
+    x="center"
+    y="40"
+    text="🔢 Lição 2: Operadores de Comparação"
+    color="#ffffff"
+    font-size="24"
+    animation="slide-down"
+  />
+
+  <!-- Herói da floresta -->
+  <agent
+    id="heroi-floresta"
+    x="50"
+    y="400"
+    image="forest-hero-idle.png"
+    animation="fade-in"
+  />
+
+  <!-- Contador de vida do herói -->
+  <property name="vida_heroi" default="100" />
+
+  <agent
+    id="display-vida"
+    x="50"
+    y="350"
+    text="Vida do Herói: $vida_heroi"
+    color="#ff6b6b"
+    font-size="16"
+  />
+
+  <!-- Seção: Igualdade (=) -->
+  <agent
+    id="secao-igual"
+    x="200"
+    y="100"
+    text="⚖️ Operador = (igual)"
+    color="#ffff99"
+    font-size="18"
+  />
+
+  <agent
+    id="botao-vida-50"
+    x="200"
+    y="140"
+    text="Vida = 50"
+    color="#ffffff"
+    on_click="set(vida_heroi, 50)"
+  />
+
+  <fab-if when="$vida_heroi = 50">
+    <agent
+      id="msg-vida-50"
+      x="400"
+      y="140"
+      text="⚡ Vida está exatamente em 50!"
+      color="#ffaa00"
+      animation="pulse"
+    />
+  </fab-if>
+
+  <!-- Seção: Maior que (>) -->
+  <agent
+    id="secao-maior"
+    x="200"
+    y="200"
+    text="📈 Operador > (maior que)"
+    color="#ffff99"
+    font-size="18"
+  />
+
+  <agent
+    id="botao-vida-mais"
+    x="200"
+    y="240"
+    text="+20 Vida"
+    color="#ffffff"
+    on_click="set(vida_heroi, $vida_heroi + 20)"
+  />
+
+  <fab-if when="$vida_heroi > 80">
+    <agent
+      id="escudo-protecao"
+      x="150"
+      y="450"
+      image="tech-saw.png"
+      animation="spin"
+    />
+    <agent
+      id="msg-protegido"
+      x="400"
+      y="240"
+      text="🛡️ Herói protegido! (vida > 80)"
+      color="#00ff00"
+    />
+  </fab-if>
+
+  <!-- Seção: Menor que (<) -->
+  <agent
+    id="secao-menor"
+    x="200"
+    y="300"
+    text="📉 Operador < (menor que)"
+    color="#ffff99"
+    font-size="18"
+  />
+
+  <agent
+    id="botao-vida-menos"
+    x="200"
+    y="340"
+    text="-30 Vida"
+    color="#ffffff"
+    on_click="set(vida_heroi, $vida_heroi - 30)"
+  />
+
+  <fab-if when="$vida_heroi < 30">
+    <agent
+      id="aviso-perigo"
+      x="400"
+      y="340"
+      text="⚠️ PERIGO! Vida baixa! (< 30)"
+      color="#ff0000"
+      animation="glow"
+    />
+  </fab-if>
+
+  <!-- Poção de cura aparece quando vida baixa -->
+  <fab-if when="$vida_heroi <= 25">
+    <agent
+      id="pocao-cura"
+      x="300"
+      y="450"
+      image="forest-mushroom.png"
+      animation="bounce-in"
+      on_click="set(vida_heroi, 100)"
+    />
+    <agent
+      id="texto-pocao"
+      x="350"
+      y="450"
+      text="Clique na poção!"
+      color="#00ff88"
+    />
+  </fab-if>
+
+  <!-- Navegação -->
+  <agent
+    id="voltar-intro"
+    x="100"
+    y="550"
+    text="⬅️ Voltar"
+    color="#cccccc"
+    on_click="goToPage('tutorial-intro')"
+  />
+
+  <agent
+    id="proximo-and"
+    x="center"
+    y="550"
+    text="➡️ Próximo: Lógica AND"
+    color="#87CEEB"
+    on_click="goToPage('tutorial-logica-and')"
+  />
+
+  <!-- Progresso -->
+  <agent
+    id="progresso-comp"
+    x="50"
+    y="50"
+    text="Progresso: 2/7"
+    color="#888888"
+    font-size="14"
+  />
 </page>
