@@ -59,7 +59,7 @@
   <!-- Seção: Igualdade (=) -->
   <agent
     id="secao-igual"
-    x="250"
+    x="350"
     y="120"
     text="⚖️ Operador = (igual)"
     color="#ffff99"
@@ -69,7 +69,7 @@
 
   <agent
     id="botao-vida-50"
-    x="250"
+    x="350"
     y="150"
     text="Vida = 50"
     color="#ffffff"
@@ -80,7 +80,7 @@
   <fab-if when="$vida_heroi = 50">
     <agent
       id="msg-vida-50"
-      x="400"
+      x="450"
       y="150"
       text="⚡ Vida está exatamente em 50!"
       color="#ffaa00"
@@ -92,7 +92,7 @@
   <!-- Seção: Maior que (>) -->
   <agent
     id="secao-maior"
-    x="250"
+    x="350"
     y="200"
     text="📈 Operador > (maior que)"
     color="#ffff99"
@@ -102,7 +102,7 @@
 
   <agent
     id="botao-vida-mais"
-    x="250"
+    x="300"
     y="230"
     text="+20 Vida"
     color="#ffffff"
@@ -113,7 +113,7 @@
   <fab-if when="$vida_heroi > 80">
     <agent
       id="escudo-protecao"
-      x="170"
+      x="270"
       y="400"
       image="tech-saw.png"
       width="80"
@@ -132,7 +132,7 @@
   <!-- Seção: Menor que (<) -->
   <agent
     id="secao-menor"
-    x="250"
+    x="350"
     y="280"
     text="📉 Operador < (menor que)"
     color="#ffff99"
@@ -142,7 +142,7 @@
 
   <agent
     id="botao-vida-menos"
-    x="250"
+    x="350"
     y="310"
     text="-30 Vida"
     color="#ffffff"
