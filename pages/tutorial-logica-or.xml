@@ -97,7 +97,7 @@
   />
 
   <!-- Sobrevivência: aparece se tem água OU encontrou oásis -->
-  <fab-if when="$tem_agua = 'true' or $encontrou_oasis = 'true'">
+  <fab-if when="$tem_agua or $encontrou_oasis">
     <agent
       id="sobrevivencia"
       x="350"
@@ -164,7 +164,7 @@
   />
 
   <!-- Status das condições OR -->
-  <fab-if when="$tem_agua = 'true'">
+  <fab-if when="$tem_agua">
     <agent
       id="check-or1"
       x="650"
@@ -175,7 +175,7 @@
     />
   </fab-if>
 
-  <fab-if when="not $tem_agua = 'true'">
+  <fab-if when="not $tem_agua">
     <agent
       id="x-or1"
       x="650"
@@ -186,7 +186,7 @@
     />
   </fab-if>
 
-  <fab-if when="$encontrou_oasis = 'true'">
+  <fab-if when="$encontrou_oasis">
     <agent
       id="check-or2"
       x="650"
@@ -197,7 +197,7 @@
     />
   </fab-if>
 
-  <fab-if when="not $encontrou_oasis = 'true'">
+  <fab-if when="not $encontrou_oasis">
     <agent
       id="x-or2"
       x="650"
