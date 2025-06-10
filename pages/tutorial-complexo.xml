@@ -171,7 +171,7 @@
 
   <!-- CONDIÇÃO COMPLEXA 3: Acesso negado -->
   <fab-if
-    when="not (($codigo_correto = 'true' and $biometria_ok = 'true') or $emergencia = 'true')"
+    when="not (($codigo_correto and $biometria_ok) or $emergencia = 'true')"
   >
     <agent
       id="acesso-negado"
