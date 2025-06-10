@@ -43,7 +43,7 @@
     y="300"
     image="desert-signarrow.png"
     width="120"
-    animation="glow"
+    animation="wiggle"
   />
 
   <!-- Painel de controle -->
