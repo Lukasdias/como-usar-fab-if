@@ -152,7 +152,7 @@
       y="300"
       image="forest-door-1.png"
       width="80"
-      animation="spin"
+      animation="wiggle"
     />
   </fab-if>
 
