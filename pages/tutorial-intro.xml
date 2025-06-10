@@ -52,7 +52,7 @@
     x="50"
     y="300"
     text="O fab-if é como uma porta mágica..."
-    color="#ffff99"
+    width="100"
     font-size="18"
     animation="typewriter"
   />
