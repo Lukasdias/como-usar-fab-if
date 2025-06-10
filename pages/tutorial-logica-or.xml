@@ -1,8 +1,4 @@
-<page
-  id="tutorial-logica-or"
-  bg_image="desert-bg.png"
-  bg_music="osts-retro-forest.mp3"
->
+<page id="tutorial-logica-or" bg_color="snow" bg_music="osts-retro-forest.mp3">
   <!-- Título -->
   <agent
     id="titulo-or"
