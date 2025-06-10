@@ -21,7 +21,6 @@
   <agent id="boss-final" x="600" y="300" 
          image="cemetery-skeleton.png" width="120" animation="wiggle" />
   
-  
   <!-- Interface de status -->
   <agent id="exp-display" x="30" y="150" 
          text="⚡ EXP: $experiencia" 
