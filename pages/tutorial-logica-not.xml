@@ -128,7 +128,7 @@
   </fab-if>
 
   <!-- Passagem livre quando porta NÃO está trancada -->
-  <fab-if when="not $porta_trancada = 'true'">
+  <fab-if when="not $porta_trancada">
     <agent
       id="passagem"
       x="500"
