@@ -1,3 +1,109 @@
-<page id="tutorial-intro" bg_color="black">
-  <agent id="titulo" x="center" y="center" text="Página tutorial-intro" color="white" font-size="24" />
+<page
+  id="tutorial-intro"
+  bg_color="#1a1a2e"
+  bg_image="tech-bg-lab.png"
+  bg_music="osts-stage.mp3"
+>
+  <!-- Título Principal -->
+  <agent
+    id="titulo-principal"
+    x="center"
+    y="50"
+    text="🎓 Academia do fab-if: Lógica Condicional"
+    color="#00ff88"
+    font-size="28"
+    animation="fade-in"
+  />
+
+  <!-- Professor Robô -->
+  <agent
+    id="professor"
+    x="100"
+    y="200"
+    image="tech-acid-1.png"
+    animation="glow"
+  />
+
+  <!-- Balão de fala do professor -->
+  <agent
+    id="fala-professor"
+    x="250"
+    y="150"
+    text="Olá, jovem programador! Sou o Professor Bot. Vou te ensinar fab-if!"
+    color="#ffffff"
+    font-size="16"
+  />
+
+  <!-- Explicação básica -->
+  <agent
+    id="explicacao-1"
+    x="center"
+    y="280"
+    text="O fab-if é como uma porta mágica que só se abre quando a condição é verdadeira!"
+    color="#ffff99"
+    font-size="18"
+  />
+
+  <agent
+    id="explicacao-2"
+    x="center"
+    y="320"
+    text="Se a condição for falsa, os elementos dentro do fab-if ficam invisíveis."
+    color="#cccccc"
+    font-size="16"
+  />
+
+  <!-- Exemplo visual simples -->
+  <agent
+    id="exemplo-titulo"
+    x="center"
+    y="380"
+    text="👀 Exemplo Simples:"
+    color="#ff6b6b"
+    font-size="18"
+  />
+
+  <!-- Botão para demonstração -->
+  <agent
+    id="botao-demo"
+    x="200"
+    y="430"
+    text="Clique aqui!"
+    color="#ffffff"
+    animation="hover-bounce"
+    on_click="set(progresso, 1)"
+  />
+
+  <!-- Este texto só aparece quando progresso = 1 -->
+  <fab-if when="$progresso = 1">
+    <agent
+      id="texto-aparece"
+      x="400"
+      y="430"
+      text="🎉 Eu apareci porque progresso = 1!"
+      color="#00ff00"
+      animation="bounce-in"
+    />
+  </fab-if>
+
+  <!-- Navegação -->
+  <agent
+    id="proximo"
+    x="center"
+    y="550"
+    text="➡️ Próxima Lição: Comparações"
+    color="#87CEEB"
+    animation="hover-glow"
+    on_click="goToPage('tutorial-comparacao')"
+  />
+
+  <!-- Progresso -->
+  <agent
+    id="progresso-intro"
+    x="50"
+    y="50"
+    text="Progresso: 1/7"
+    color="#888888"
+    font-size="14"
+  />
 </page>
