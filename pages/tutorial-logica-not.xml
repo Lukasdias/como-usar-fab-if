@@ -1,0 +1,3 @@
+<page id="tutorial-logica-not" bg_color="black">
+  <agent id="titulo" x="center" y="center" text="Página tutorial-logica-not" color="white" font-size="24" />
+</page>
