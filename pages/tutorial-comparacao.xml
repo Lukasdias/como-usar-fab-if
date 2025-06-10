@@ -6,7 +6,7 @@
   <!-- Título da Lição -->
   <agent
     id="titulo-comparacao"
-    x="250"
+    x="center"
     y="20"
     text="🔢 Lição 2: Operadores de Comparação"
     color="#ffffff"
