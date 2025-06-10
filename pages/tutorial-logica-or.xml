@@ -1,3 +1,268 @@
-<page id="tutorial-logica-or" bg_color="black">
-  <agent id="titulo" x="center" y="center" text="Página tutorial-logica-or" color="white" font-size="24" />
+<page
+  id="tutorial-logica-or"
+  bg_color="#d4a574"
+  bg_image="desert-bg.png"
+  bg_music="osts-retro-forest.mp3"
+>
+  <!-- Título -->
+  <agent
+    id="titulo-or"
+    x="280"
+    y="20"
+    text="🌟 Lição 4: Operador OR (ou)"
+    color="#8b4513"
+    font-size="20"
+    animation="typewriter"
+  />
+
+  <!-- Narrativa introdutória -->
+  <agent
+    id="narrativa-or-1"
+    x="50"
+    y="80"
+    text="Perdido no deserto escaldante, nosso explorador busca sobreviver..."
+    color="#654321"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-or-2"
+    x="50"
+    y="110"
+    text="Para não morrer de sede, ele precisa de PELO MENOS uma coisa:"
+    color="#654321"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <agent
+    id="narrativa-or-3"
+    x="50"
+    y="140"
+    text="Água na mochila OU encontrar um oásis!"
+    color="#654321"
+    font-size="16"
+    animation="typewriter"
+  />
+
+  <!-- Cenário: Aventureiro no deserto -->
+  <agent
+    id="aventureiro"
+    x="30"
+    y="300"
+    image="desert-jones.png"
+    width="120"
+    animation="fade-in"
+  />
+
+  <agent id="cacto" x="600" y="320" image="desert-cactus.png" width="100" />
+
+  <!-- Variáveis do cenário -->
+  <property name="tem_agua" default="false" />
+  <property name="encontrou_oasis" default="false" />
+
+  <!-- Controles -->
+  <agent
+    id="status-agua"
+    x="200"
+    y="200"
+    text="💧 Tem água: $tem_agua"
+    color="#4169e1"
+    font-size="16"
+  />
+
+  <agent
+    id="botao-agua"
+    x="200"
+    y="230"
+    text="💧 Encontrar Água"
+    color="#ffffff"
+    font-size="14"
+    on_click="set(tem_agua, 'true')"
+  />
+
+  <agent
+    id="status-oasis"
+    x="200"
+    y="280"
+    text="🏝️ Oásis encontrado: $encontrou_oasis"
+    color="#228b22"
+    font-size="16"
+  />
+
+  <agent
+    id="botao-oasis"
+    x="200"
+    y="310"
+    text="🏝️ Procurar Oásis"
+    color="#ffffff"
+    font-size="14"
+    on_click="set(encontrou_oasis, 'true')"
+  />
+
+  <!-- Sobrevivência: aparece se tem água OU encontrou oásis -->
+  <fab-if when="$tem_agua = 'true' or $encontrou_oasis = 'true'">
+    <agent
+      id="sobrevivencia"
+      x="350"
+      y="350"
+      text="✅ SOBREVIVEU NO DESERTO!"
+      color="#00ff00"
+      font-size="18"
+      animation="bounce-in"
+    />
+
+    <agent
+      id="narrativa-sobreviveu"
+      x="200"
+      y="380"
+      text="Uma condição foi suficiente para sobreviver!"
+      color="#ffffff"
+      font-size="14"
+      animation="typewriter"
+    />
+  </fab-if>
+
+  <!-- Sede extrema: aparece se NÃO tem água E NÃO encontrou oásis -->
+  <fab-if when="$tem_agua = 'false' and $encontrou_oasis = 'false'">
+    <agent
+      id="sede"
+      x="350"
+      y="350"
+      text="💀 Morrendo de sede!"
+      color="#ff0000"
+      font-size="16"
+      animation="glow"
+    />
+  </fab-if>
+
+  <!-- Explicação visual -->
+  <agent
+    id="condicao-or-1"
+    x="450"
+    y="200"
+    text="📋 Condição A: tem_agua = true"
+    color="#654321"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="condicao-or-2"
+    x="450"
+    y="230"
+    text="📋 Condição B: encontrou_oasis = true"
+    color="#654321"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <agent
+    id="resultado-or"
+    x="450"
+    y="260"
+    text="✅ PELO MENOS UMA deve ser TRUE!"
+    color="#800000"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <!-- Status das condições OR -->
+  <fab-if when="$tem_agua = 'true'">
+    <agent
+      id="check-or1"
+      x="650"
+      y="200"
+      text="✅"
+      color="#00ff00"
+      font-size="16"
+    />
+  </fab-if>
+
+  <fab-if when="not $tem_agua = 'true'">
+    <agent
+      id="x-or1"
+      x="650"
+      y="200"
+      text="❌"
+      color="#ff0000"
+      font-size="16"
+    />
+  </fab-if>
+
+  <fab-if when="$encontrou_oasis = 'true'">
+    <agent
+      id="check-or2"
+      x="650"
+      y="230"
+      text="✅"
+      color="#00ff00"
+      font-size="16"
+    />
+  </fab-if>
+
+  <fab-if when="not $encontrou_oasis = 'true'">
+    <agent
+      id="x-or2"
+      x="650"
+      y="230"
+      text="❌"
+      color="#ff0000"
+      font-size="16"
+    />
+  </fab-if>
+
+  <!-- Dica narrativa -->
+  <agent
+    id="dica-or"
+    x="200"
+    y="450"
+    text="💡 OR permite que apenas UMA condição seja verdadeira!"
+    color="#ffffff"
+    font-size="14"
+    animation="typewriter"
+  />
+
+  <!-- Reset para testar novamente -->
+  <agent
+    id="reset-desert"
+    x="450"
+    y="320"
+    text="🔄 Reset"
+    color="#ffffff"
+    font-size="14"
+    on_click="set(tem_agua, 'false'); set(encontrou_oasis, 'false')"
+  />
+
+  <!-- Navegação -->
+  <agent
+    id="voltar-and"
+    x="50"
+    y="530"
+    text="⬅️ Voltar"
+    color="#8b4513"
+    font-size="14"
+    on_click="goToPage('tutorial-logica-and')"
+  />
+
+  <agent
+    id="proximo-not"
+    x="300"
+    y="530"
+    text="➡️ Próximo: Lógica NOT"
+    color="#654321"
+    font-size="14"
+    on_click="goToPage('tutorial-logica-not')"
+  />
+
+  <!-- Progresso -->
+  <agent
+    id="progresso-or"
+    x="20"
+    y="20"
+    text="Progresso: 4/7"
+    color="#654321"
+    font-size="12"
+  />
 </page>
