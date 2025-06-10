@@ -148,8 +148,8 @@
 
     <agent
       id="porta-aberta"
-      x="550"
-      y="300"
+      x="500"
+      y="250"
       image="forest-door-1.png"
       width="80"
       animation="wiggle"
