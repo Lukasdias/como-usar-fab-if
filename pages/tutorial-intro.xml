@@ -29,7 +29,7 @@
     id="fala-professor"
     x="250"
     y="150"
-    text="Olá, jovem programador! Sou o Professor Bot. Vou te ensinar fab-if!"
+    text="Olá, jovem programador! Vou te ensinar fab-if!"
     color="#ffffff"
     font-size="16"
   />
