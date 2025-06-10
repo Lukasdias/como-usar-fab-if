@@ -20,9 +20,9 @@
     id="professor"
     x="50"
     y="150"
-    image="tech-acid-1.png"
+    image="cemetery-arrowsign.png"
     width="120"
-    animation="glow"
+    animation="swing"
   />
 
   <!-- Narrativa do professor -->
