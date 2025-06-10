@@ -58,10 +58,6 @@
 
   <agent id="cacto" x="600" y="320" image="desert-cactus.png" width="100" />
 
-  <!-- Variáveis do cenário -->
-  <property name="tem_agua" default="false" />
-  <property name="encontrou_oasis" default="false" />
-
   <!-- Controles -->
   <agent
     id="status-agua"
