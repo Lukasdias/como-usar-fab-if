@@ -95,7 +95,7 @@
     text="🗝️ Trancar/Destrancar"
     color="#ffffff"
     font-size="14"
-    on_click="set(porta_trancada, $porta_trancada = 'true' ? 'false' : 'true')"
+    on_click="set(porta_trancada, !$porta_trancada)"
   />
 
   <!-- Fantasmas aparecem quando NÃO tem luz -->
