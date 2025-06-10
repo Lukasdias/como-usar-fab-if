@@ -68,7 +68,7 @@
     x="200"
     y="230"
     text="💧 Encontrar Água"
-    color="#ffffff"
+    color="#4169e1"
     font-size="14"
     on_click="set(tem_agua, 'true')"
   />
@@ -87,7 +87,7 @@
     x="200"
     y="310"
     text="🏝️ Procurar Oásis"
-    color="#ffffff"
+    color="#4169e1"
     font-size="14"
     on_click="set(encontrou_oasis, 'true')"
   />
@@ -109,7 +109,7 @@
       x="200"
       y="380"
       text="Uma condição foi suficiente para sobreviver!"
-      color="#ffffff"
+      color="#4169e1"
       font-size="14"
       animation="typewriter"
     />
@@ -210,7 +210,7 @@
     x="200"
     y="450"
     text="💡 OR permite que apenas UMA condição seja verdadeira!"
-    color="#ffffff"
+    color="#4169e1"
     font-size="14"
     animation="typewriter"
   />
@@ -221,7 +221,7 @@
     x="450"
     y="320"
     text="🔄 Reset"
-    color="#ffffff"
+    color="#4169e1"
     font-size="14"
     on_click="set(tem_agua, 'false'); set(encontrou_oasis, 'false')"
   />
