@@ -1,1 +1,142 @@
-<page id="tutorial-final" bg_color="beige" />
+<page id="tutorial-final" bg_color="#4b0082" bg_image="forest-bg.png" bg_music="osts-retro-forest.mp3">
+  
+  <!-- Título do desafio -->
+  <agent id="titulo-final" x="220" y="20" 
+         text="🏆 DESAFIO FINAL: Mestre do fab-if!" 
+         color="#ffd700" font-size="20" animation="typewriter" />
+  
+  <!-- Narrativa épica -->
+  <agent id="narrativa-final-1" x="30" y="70" 
+         text="Chegou a hora da prova definitiva, jovem programador..." 
+         color="#ffffff" font-size="16" animation="typewriter" />
+  
+  <agent id="narrativa-final-2" x="30" y="100" 
+         text="Um dragão antigo desperta! Use tudo que aprendeu sobre fab-if para vencê-lo!" 
+         color="#ffffff" font-size="16" animation="typewriter" />
+  
+  <!-- Cenário: Quest épica -->
+  <agent id="heroi-final" x="30" y="350" 
+         image="forest-hero-idle.png" width="120" animation="fade-in" />
+  
+  <agent id="boss-final" x="600" y="300" 
+         image="cemetery-skeleton.png" width="120" animation="wiggle" />
+  
+  <!-- Variáveis do desafio -->
+  <property name="experiencia" default="0" />
+  <property name="tem_espada" default="false" />
+  <property name="tem_escudo" default="false" />
+  <property name="chefe_derrotado" default="false" />
+  <property name="missao_completa" default="false" />
+  
+  <!-- Interface de status -->
+  <agent id="exp-display" x="30" y="150" 
+         text="⚡ EXP: $experiencia" 
+         color="#00ff00" font-size="16" />
+  
+  <agent id="equipamentos" x="30" y="180" 
+         text="🗡️ Espada: $tem_espada | 🛡️ Escudo: $tem_escudo" 
+         color="#ffaa00" font-size="14" />
+  
+  <!-- Ações disponíveis -->
+  <agent id="btn-treinar" x="200" y="200" 
+         text="⚔️ Treinar (+10 EXP)" color="#ffffff" font-size="14"
+         on_click="set(experiencia, $experiencia + 10)" />
+  
+  <agent id="btn-espada" x="200" y="230" 
+         text="🗡️ Pegar Espada" color="#ffffff" font-size="14"
+         on_click="set(tem_espada, 'true')" />
+  
+  <agent id="btn-escudo" x="200" y="260" 
+         text="🛡️ Pegar Escudo" color="#ffffff" font-size="14"
+         on_click="set(tem_escudo, 'true')" />
+  
+  <!-- DESAFIO 1: Equipamentos completos -->
+  <fab-if when="$tem_espada = 'true' and $tem_escudo = 'true'">
+    <agent id="equipado" x="400" y="200" 
+           text="⚡ TOTALMENTE EQUIPADO!" 
+           color="#ffd700" font-size="14" animation="pulse" />
+  </fab-if>
+  
+  <!-- DESAFIO 2: Pronto para batalha -->
+  <fab-if when="($experiencia >= 50 and $tem_espada = 'true') or $experiencia >= 100">
+    <agent id="btn-batalha" x="400" y="250" 
+           text="🐉 BATALHAR CONTRA O CHEFE!" 
+           color="#ff0000" font-size="14" animation="hover-glow"
+           on_click="set(chefe_derrotado, 'true')" />
+  </fab-if>
+  
+  <!-- DESAFIO 3: Vitória épica -->
+  <fab-if when="$chefe_derrotado = 'true' and ($tem_escudo = 'true' or $experiencia >= 80)">
+    <agent id="vitoria" x="350" y="320" 
+           text="🎉 VITÓRIA ÉPICA! CHEFE DERROTADO!" 
+           color="#ffd700" font-size="16" 
+           animation="bounce-in" />
+    
+    <agent id="narrativa-vitoria" x="200" y="350" 
+           text="Parabéns! Você dominou completamente o fab-if!" 
+           color="#ffffff" font-size="14" animation="typewriter" />
+  </fab-if>
+  
+  <!-- DESAFIO 4: Conquista suprema -->
+  <fab-if when="$chefe_derrotado = 'true' and $experiencia >= 70 and $tem_espada = 'true' and ($tem_escudo = 'true' or $experiencia >= 100)">
+    <agent id="conquista-final" x="250" y="380" 
+           text="👑 MESTRE SUPREMO DO FAB-IF!" 
+           color="#ff00ff" font-size="16" 
+           animation="glow" />
+  </fab-if>
+  
+  <!-- Explicação dos desafios -->
+  <agent id="desafios-titulo" x="200" y="420" 
+         text="🎯 Desafios Ativos:" 
+         color="#ffffff" font-size="14" animation="typewriter" />
+  
+  <agent id="desafio-1" x="200" y="440" 
+         text="1. Equipar espada AND escudo" 
+         color="#cccccc" font-size="12" />
+  
+  <agent id="desafio-2" x="200" y="460" 
+         text="2. (EXP≥50 AND espada) OR EXP≥100" 
+         color="#cccccc" font-size="12" />
+  
+  <agent id="desafio-3" x="200" y="480" 
+         text="3. Vencer AND (escudo OR EXP≥80)" 
+         color="#cccccc" font-size="12" />
+  
+  <!-- Reset para tentar novamente -->
+  <agent id="reset-final" x="30" y="500" 
+         text="🔄 Recomeçar Desafio" color="#cccccc" font-size="12"
+         on_click="set(experiencia, 0); set(tem_espada, 'false'); set(tem_escudo, 'false'); set(chefe_derrotado, 'false'); set(missao_completa, 'false')" />
+  
+  <!-- Certificado final -->
+  <fab-if when="$chefe_derrotado = 'true'">
+    <agent id="certificado" x="400" y="450" 
+           text="📜 CERTIFICADO: ESPECIALISTA EM FAB-IF!" 
+           color="#ffd700" font-size="14" 
+           animation="typewriter" />
+  </fab-if>
+  
+  <!-- Navegação -->
+  <agent id="voltar-complex" x="50" y="530" <!-- Navegação -->
+  <agent id="voltar-complex" x="50" y="530" 
+         text="⬅️ Voltar" color="#cccccc" font-size="14"
+         on_click="goToPage('tutorial-complexo')" />
+  
+  <agent id="voltar-inicio" x="200" y="530" 
+         text="🏠 Voltar ao Início" color="#ffd700" font-size="14"
+         on_click="goToPage('tutorial-intro')" />
+  
+  <agent id="ir-resumo-final" x="400" y="530" 
+         text="📚 Ver Resumo" color="#87CEEB" font-size="14"
+         on_click="goToPage('tutorial-resumo')" />
+  
+  <!-- Progresso final -->
+  <agent id="progresso-final" x="20" y="20" 
+         text="Progresso: 7/7 - COMPLETO!" color="#ffd700" font-size="12" />
+  
+  <!-- Mensagem final de conquista -->
+  <fab-if when="$experiencia >= 100 and $tem_espada = 'true' and $tem_escudo = 'true' and $chefe_derrotado = 'true'">
+    <agent id="mensagem-mestre" x="200" y="570" 
+           text="🌟 Você agora é um verdadeiro Mestre do fab-if! Use esse conhecimento com sabedoria!" 
+           color="#ffffff" font-size="12" animation="typewriter" />
+  </fab-if>
+</page> 
