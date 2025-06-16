@@ -194,7 +194,7 @@
     />
   </fab-if>
 
-  <fab-if when="!$tem_lenha">
+  <fab-if when="not $tem_lenha">
     <agent id="x2" x="650" y="230" text="❌" color="#ff0000" font-size="16" />
   </fab-if>
 
