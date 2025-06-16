@@ -183,7 +183,7 @@
     <agent id="x1" x="650" y="200" text="❌" color="#ff0000" font-size="16" />
   </fab-if>
 
-  <fab-if when="$tem_lenha = 'true'">
+  <fab-if when="$tem_lenha">
     <agent
       id="check2"
       x="650"
