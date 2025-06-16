@@ -110,11 +110,11 @@
     text="🪵 Coletar Lenha"
     color="#ffffff"
     font-size="14"
-    on_click="set(tem_lenha, true)"
+    on_click="set(tem_lenha, 'true')"
   />
 
   <!-- Fogueira aparece APENAS se temperatura <= 0 AND tem_lenha = true -->
-  <fab-if when="$temperatura <= 0 and $tem_lenha">
+  <fab-if when="$temperatura <= 0 and $tem_lenha = 'true'">
     <agent
       id="fogueira"
       x="400"
