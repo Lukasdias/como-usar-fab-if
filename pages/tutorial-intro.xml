@@ -13,8 +13,8 @@
   <agent
     id="professor"
     x="50"
-    y="150"
-    image="cemetery-arrowsign.png"
+    y="120"
+    image="sabe_muito.png"
     width="120"
     animation="swing"
   />
