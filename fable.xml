@@ -21,7 +21,6 @@
   <property name="chefe_derrotado" default="false" />
   <property name="missao_completa" default="false" />
 
-  <teste />
   <tutorial-intro />
   <tutorial-comparacao />
   <tutorial-logica-and />
