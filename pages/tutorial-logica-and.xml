@@ -114,7 +114,7 @@
   />
 
   <!-- Fogueira aparece APENAS se temperatura <= 0 AND tem_lenha = true -->
-  <fab-if when="$temperatura <= 0 and $tem_lenha = true">
+  <fab-if when="$temperatura <= 0 and $tem_lenha = 'true'">
     <agent
       id="fogueira"
       x="400"
