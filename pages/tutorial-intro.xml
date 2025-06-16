@@ -24,7 +24,7 @@
     id="fala-professor-1"
     x="200"
     y="120"
-    text="Olá, jovem programador! Sou o Professor Bot."
+    text="Olá, jovem programador!"
     color="#ffffff"
     font-size="16"
     animation="typewriter"
